@@ -1,0 +1,14 @@
+/* Variáveis CSS */
+:root {
+    --primary-color: #1a73e8;
+    --secondary-color: #ffffff;
+    --accent-color: #fbbc05;
+    --danger-color: #ea4335;
+    --light-color: #ffffff;
+    --dark-color: #202124;
+    --gray-color: #5f6368;
+    --light-gray: #f8f9fa;
+    --font-main: 'Roboto', sans-serif;
+    --font-heading: 'Open Sans', sans-serif;
+    --transition-speed: 0.3s;
+}
