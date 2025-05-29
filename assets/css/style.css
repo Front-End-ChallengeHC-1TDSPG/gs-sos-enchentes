@@ -316,3 +316,36 @@ textarea.form-control {
 .social-links a:hover {
     color: var(--primary-color);
 }
+
+/* Página FAQ */
+.faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 1.5rem;
+    background-color: var(--light-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.faq-question {
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    padding: 1rem;
+    display: none;
+}
+
+.faq-answer.active {
+    display: block;
+}
