@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setInterval(updateAlerts, 5000);
         updateAlerts(); // Executa imediatamente
     }
-    
+
     // Funções auxiliares
     function showError(input, message) {
         const error = document.createElement('div');
@@ -157,3 +157,31 @@ document.addEventListener('DOMContentLoaded', function() {
             alertGrid.appendChild(alertCard);
         });
     }
+    
+    // Mapa interativo (simulação)
+    if (document.querySelector('.map-container')) {
+        const mapAreas = document.querySelectorAll('.map-area');
+        
+        mapAreas.forEach(area => {
+            area.addEventListener('mouseenter', function() {
+                const tooltip = document.createElement('div');
+                tooltip.className = 'map-tooltip';
+                tooltip.textContent = this.getAttribute('data-area');
+                
+                document.body.appendChild(tooltip);
+                
+                const updateTooltipPosition = (e) => {
+                    tooltip.style.left = `${e.pageX + 10}px`;
+                    tooltip.style.top = `${e.pageY + 10}px`;
+                };
+                
+                this.addEventListener('mousemove', updateTooltipPosition);
+                
+                this.addEventListener('mouseleave', function() {
+                    tooltip.remove();
+                    this.removeEventListener('mousemove', updateTooltipPosition);
+                });
+            });
+        });
+    }
+});
