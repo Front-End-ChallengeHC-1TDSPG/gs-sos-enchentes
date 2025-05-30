@@ -80,9 +80,80 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     // Simulação de Alertas em tempo real
     if (document.querySelector('.alert-grid')) {
         setInterval(updateAlerts, 5000);
         updateAlerts(); // Executa imediatamente
+    }
+    
+    // Funções auxiliares
+    function showError(input, message) {
+        const error = document.createElement('div');
+        error.className = 'error';
+        error.textContent = message;
+        input.parentNode.insertBefore(error, input.nextSibling);
+        input.classList.add('error-border');
+    }
+    
+    function showSuccess(message) {
+        const successMsg = document.createElement('div');
+        successMsg.className = 'success-message';
+        successMsg.textContent = message;
+        successMsg.style.backgroundColor = 'var(--secondary-color)';
+        successMsg.style.color = 'white';
+        successMsg.style.padding = '1rem';
+        successMsg.style.borderRadius = '4px';
+        successMsg.style.marginTop = '1rem';
+        successMsg.style.textAlign = 'center';
+        
+        const form = document.querySelector('form');
+        form.insertBefore(successMsg, form.firstChild);
+        
+        setTimeout(() => {
+            successMsg.remove();
+        }, 5000);
+    }
+    
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+    
+    function updateAlerts() {
+        const alerts = [
+            {
+                level: 'high',
+                area: 'Centro',
+                message: 'Alerta de enchente iminente - Nível do rio atingiu 5m'
+            },
+            {
+                level: 'medium',
+                area: 'Zona Norte',
+                message: 'Chuva intensa prevista para as próximas 2 horas'
+            },
+            {
+                level: 'low',
+                area: 'Zona Sul',
+                message: 'Nível do rio está elevado - Monitoramento constante'
+            }
+        ];
+        
+        const alertGrid = document.querySelector('.alert-grid');
+        alertGrid.innerHTML = '';
+        
+        alerts.forEach(alert => {
+            const alertCard = document.createElement('div');
+            alertCard.className = `alert-card ${alert.level}`;
+            
+            alertCard.innerHTML = `
+                <div class="alert-icon">${alert.level === 'high' ? '⚠️' : 'ℹ️'}</div>
+                <div>
+                    <h3>${alert.area}</h3>
+                    <p>${alert.message}</p>
+                    <small>Atualizado em ${new Date().toLocaleTimeString()}</small>
+                </div>
+            `;
+            
+            alertGrid.appendChild(alertCard);
+        });
     }
