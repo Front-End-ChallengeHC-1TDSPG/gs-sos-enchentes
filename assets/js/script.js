@@ -32,3 +32,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.querySelector('.toggle-icon').textContent = '-';
             }
         });
+
+        // Adiciona ícone de toggle
+        const toggleIcon = document.createElement('span');
+        toggleIcon.className = 'toggle-icon';
+        toggleIcon.textContent = '+';
+        question.appendChild(toggleIcon);
+    });
