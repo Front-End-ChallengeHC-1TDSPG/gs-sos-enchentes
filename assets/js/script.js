@@ -11,3 +11,24 @@ document.addEventListener('DOMContentLoaded', function() {
             this.textContent = isExpanded ? '☰' : '✕';
         });
     }
+
+    // FAQ 
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const answer = this.nextElementSibling;
+            const isOpen = answer.classList.contains('active');
+            
+            // Fecha todas as respostas
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                item.classList.remove('active');
+                item.previousElementSibling.querySelector('.toggle-icon').textContent = '+';
+            });
+            
+            // Se não estiver aberta, abre a resposta clicada
+            if (!isOpen) {
+                answer.classList.add('active');
+                this.querySelector('.toggle-icon').textContent = '-';
+            }
+        });
