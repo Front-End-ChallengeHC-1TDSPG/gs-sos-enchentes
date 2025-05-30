@@ -74,9 +74,15 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             if (isValid) {
-                    
+
                 showSuccess('Mensagem enviada com sucesso! Em breve entraremos em contato.');
                 this.reset();
             }
         });
+    }
+    
+    // Simulação de Alertas em tempo real
+    if (document.querySelector('.alert-grid')) {
+        setInterval(updateAlerts, 5000);
+        updateAlerts(); // Executa imediatamente
     }
