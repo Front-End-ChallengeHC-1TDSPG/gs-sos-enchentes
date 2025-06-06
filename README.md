@@ -58,4 +58,4 @@ gs-sos-enchentes/
 ---
 
 ## 🖥️ Endereço do repositório do projeto no GITHUB: 
-https://github.com/Arquivos-Global-Solution-AGJ/GS-front
+https://github.com/Front-End-ChallengeHC-1TDSPG/gs-sos-enchentes
