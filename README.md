@@ -11,15 +11,15 @@ gs-sos-enchentes/
 │   ├── css/
 │   │   ├── style.css
 │   │   
-│   ├── img/
-│   │   ├── analise-dados.png
-│   │   ├── andre-imagem.jpg
+│   ├── images/
+│   │   ├── analise-dados.jpg
+│   │   ├── andre-imagem.jpeg
 │   │   ├── desligar-energia.jpg
 │   │   ├── enchente.jpg
 │   │   ├── fundo.jpg
-│   │   ├── Gabriel-imagem.jpg
+│   │   ├── gabriel-imagem.jpeg
 │   │   └── ia-meteorologia.jpg
-│   │   └── image.jpg
+│   │   └── image.png
 │   │   └── joaoImagem.jpg
 │   │   └── limpar-casa.jpg
 │   │   └── logo.jpg
